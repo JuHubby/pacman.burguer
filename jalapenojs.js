@@ -1,3 +1,5 @@
+
+//BURGUER//
 // pos is the PacMan image position variable- it is set to 0 initially
 var pos = 0;
 //pageWidth is the width of the webpage. This is later used to calculate when Pac-Man needs to turn around. 
@@ -49,6 +51,7 @@ function checkPageBounds(direction, imgWidth, pos, pageWidth) {
   return direction;
 }
 
+//PAC-MAN//
 
 var pos1 = 0;
 const pacArray = [
@@ -73,7 +76,7 @@ function Run1() {
     // This toggle may be used 
     //to alternate between Pac-Man's mouth being open and closed.
     focus1 = (focus1 + 1) % 2;
-    direction1 = checkPageBounds1(direction1, imgWidth1,pos1,pageWidth1);
+    direction1 = checkPageBounds1(direction1, imgWidth1,pos1,pageWidth);
     //This line img.src sets the src attribute of the Pac-Man image 
     //(img) to a new image source based on the direction and focus values.
     // It seems to be updating the image to create the appearance
@@ -92,15 +95,13 @@ function Run1() {
 
 setInterval(Run1,300);
 
-var finalPos1 = 1141;
-let pageWidth1 = window.innerWidth;
 
-function checkPageBounds1(direction1, imgWidth1,pos1,pageWidth1) {
+function checkPageBounds1(direction1, imgWidth1,pos1,pageWidth) {
     //
     // Complete this to reverse direction on hitting page bounds
     // 
     
-    if(direction1 === 0 && pos1 + imgWidth1 > pageWidth1)  direction1 = 1;
+    if(direction1 === 0 && pos1 + imgWidth1 > pageWidth)  direction1 = 1;
     if(direction1 === 1 && pos1 === 0) direction1 = 0;
     
     return direction1;
